@@ -50,9 +50,10 @@ class ParkingList extends Component{
     }
 
     renderParkingList(){
-        const ParkingList = this.state.results.map((result) => {
+        const ParkingList = this.state.results.map((result, index) => {
             return(
                 <div key = {result.id}>
+                    <h3 tabindex="0">{index+1}){result.name}</h3>
                     <img src={result.image_url} alt="No Image Found"/>
                     <p>Score: {result.score}</p><br/>
                     <p>Address: {result.location.display_address[0]}, {result.location.display_address[1]}</p><br/>
